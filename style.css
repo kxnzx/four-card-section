@@ -1,0 +1,217 @@
+/* GOOGLE FONTS ***********************************************************/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&family=Spartan:wght@400;500;700&display=swap");
+
+/* VARIABLES   ***********************************************************/
+:root {
+  /*** colors ***/
+  /* primary colors */
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  /* neutral colors */
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  /*** fonts ***/
+  /* font-family */
+  --ff-primary: "poppins", sans-serif;
+  /* font-size */
+  --fs-14-px: 0.875rem;
+  --fs-15-px: 0.9375rem;
+  --fs-17-px: 1.0625rem;
+  --fs-25-px: 1.5625rem;
+  --fs-31-px: 1.9375rem;
+  --fs-42-px: 2.625rem;
+  /* font-weight */
+  --fw-extra-light: 200;
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+}
+
+/* RESET      ***********************************************************/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* GLOBAL STYLES     ***********************************************************/
+body {
+  /* center alignment */
+  width: 100%;
+  position: absolute;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /* global content styles */
+  font-family: var(--ff-primary);
+  font-size: var(--fs-15-px);
+  /* global background-styles */
+  background-color: var(--very-light-gray);
+}
+/* global content styles */
+h1,
+h2 {
+  color: var(--very-dark-blue);
+}
+
+h1 {
+  font-weight: var(--fw-semi-bold);
+}
+
+h1 span {
+  font-weight: var(--fw-extra-light);
+}
+
+.header__text {
+  line-height: 1.6;
+  color: var(--grayish-blue);
+}
+
+section p {
+  color: var(--grayish-blue);
+  font-weight: var(--fw-regular);
+  line-height: 1.8;
+}
+
+footer {
+  color: var(--grayish-blue);
+  text-align: center;
+  margin-top: 2rem;
+  bottom: 0;
+}
+
+.attribution a {
+  color: var(--cyan);
+}
+
+/* STYLES MOBILE FIRST 375px    ***********************************************************/
+header {
+  text-align: center;
+  margin: 5rem auto;
+  max-width: 600px;
+}
+
+header h1 {
+  padding: 0 2rem;
+  font-size: var(--fs-25-px);
+}
+
+.header__text {
+  margin-top: 1.25rem;
+  padding: 0 2rem;
+}
+
+main {
+  display: grid;
+  grid-gap: 1.875rem;
+  margin: 0 2rem;
+}
+
+section {
+  background-color: white;
+  padding: 1.875rem;
+  border-radius: 5px;
+  box-shadow: rgb(163, 165, 174) 0px 14px 28px, rgb(163, 165, 174) 0px 10px 10px;
+  border-top: 5px solid;
+}
+
+.section__text {
+  margin-top: 0.5rem;
+  font-size: var(--fs-14-px);
+}
+
+.section__icon img {
+  display: block;
+  margin-left: auto;
+  margin-top: 2rem;
+}
+
+.section__cyan {
+  border-color: var(--cyan);
+}
+
+.section__red {
+  border-color: red;
+}
+
+.section__orange {
+  border-color: var(--orange);
+}
+
+.section__blue {
+  border-color: var(--blue);
+}
+
+/* MEDIA QUERIES  ***********************************************************/
+/*** MOBILE DEVICE GREATER THAN 450PX ***/
+@media screen and (min-width: 450px) {
+  header h1 {
+    font-size: var(--fs-31-px);
+  }
+}
+/*** IPADS & TABLETS ***/
+@media screen and (min-width: 768px) {
+  header h1 {
+    font-size: var(--fs-42-px);
+  }
+}
+
+/*** LAPTOP & DESKTOP ***/
+@media screen and (min-width: 992px) {
+  header {
+    margin: 3.5rem auto;
+  }
+
+  .header__text {
+    margin-top: 1rem;
+  }
+
+  main {
+    grid-template-rows: repeat (4, 1fr);
+    grid-template-columns: repeat (3, 1fr);
+    justify-content: center;
+  }
+  section {
+    height: 250px;
+    width: 350px;
+  }
+
+  .section__icon img {
+    margin-top: 2rem;
+  }
+  .section__cyan,
+  .section__blue {
+    grid-row-start: 2;
+    grid-row-end: 4;
+  }
+
+  .section__red {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  .section__orange {
+    grid-row-start: 3;
+    grid-row-end: 5;
+  }
+
+  footer {
+    bottom: 0;
+    margin-top: 2.7rem;
+  }
+}
